@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    section{
+        background-color: white;
+        height:100vh;
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        gap:50px;
+    }
+    h3{
+        font-size: 50px;
+        text-align: center;
+        padding-top:50px;
+    }
+    .para{
+        color:green;
+        font-size: 50px;
+        text-align: center;
+    }
+    .btn{
+        text-align: center;
+    }
+    .dec{
+        padding:10px;
+        margin-right:10px;
+        cursor: pointer;
+    }
+    .dec:hover{
+        border-color: blue;
+    }
+    .res{
+        padding:10px;
+        margin-right:10px;
+        cursor: pointer;
+    }
+    .res:hover{
+        border-color: blue;
+    }
+    .inc{
+        padding:10px;
+        margin-right:10px;
+        cursor: pointer;
+    }
+    .inc:hover{
+        border-color: blue;
+    }
+</style>
+<body>
+    <section>
+        <h3>Counter</h3>
+        <p class="para">0</p>
+        <div class="btn">
+            <button class="dec">Decrease</button>
+            <button class="res">Reset</button>
+            <button class="inc">Increase</button>
+        </div>
+    </section>
+    <script>
+        let display = document.querySelector('.para');
+        let incrementBtn = document.querySelector('.inc');
+        let decrementBtn = document.querySelector ('.dec');
+        let resetBtn = document.querySelector ('.res')
+        incrementBtn.addEventListener('click', increment);
+        decrementBtn.addEventListener('click', decrement);
+        resetBtn.addEventListener('click', reset);
+
+        let n = 0;
+        function increment(){
+            n += 1;
+            display.textContent = n;
+        }
+        function decrement(){
+            n -= 1;
+            display.textContent = n;
+        }
+        function reset(){
+            n = 0;
+            display.textContent = n;
+        }
+    </script>
+</body>
+</html>
